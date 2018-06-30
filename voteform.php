@@ -130,7 +130,7 @@ button:hover {
     </li>   
        
     <li class="nav-item" style="padding-left: 14px">
-        <a href="" class="nav-link" >Candidates</a>
+        <a href="candidate.php" class="nav-link" >Candidates</a>
     </li>
 	
 	<li class="nav-item" style="padding-left: 14px">
@@ -162,7 +162,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote1' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='radio' name='vote1' value='$row[candidate_name]'  oninput='this.className = '' '   /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result1);
@@ -178,7 +178,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote2' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='radio' name='vote2' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result2);
@@ -193,7 +193,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote3' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='radio' name='vote3' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result3);
@@ -210,7 +210,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote4' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='radio' name='vote4' value='$row[candidate_name]'  oninput='this.className = '' ' /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result4);
@@ -226,7 +226,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote5' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='radio' name='vote5' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result5);
@@ -243,7 +243,7 @@ button:hover {
 					{
 						echo "<tr>";
 						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='checkbox' name='vote6' value='$row[candidate_name]'  oninput='this.className = '' ' name='additionalInfo'  /></td>";
+						echo "<td><input type='checkbox' name='vote6' value='$row[candidate_name]'  oninput='this.className = '' ' /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result6);
@@ -343,35 +343,6 @@ function fixStepIndicator(n) {
 </script>
 
 
-<div class="container-fluid"><br>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>  
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-</div>
 
     
   </body>
