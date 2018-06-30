@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Online Voting Home page before login</title>
+    <title>Home page </title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/login.css" rel="stylesheet">
+    <link href="assets/css/news.css" rel="stylesheet">
 
   </head>
   <body>
@@ -30,7 +31,7 @@
     </li>   
        
     <li class="nav-item" style="padding-left: 14px">
-        <a href="" class="nav-link" >Candidates</a>
+        <a href="candidate.php" class="nav-link" >Candidates</a>
     </li>
 	
 	<li class="nav-item" style="padding-left: 14px">
@@ -51,34 +52,40 @@
   </ul>
 </nav>
 
-<div class="container-fluid"><br>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>  
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p> 
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+<div style="padding-left:200px; padding-top:20px; font-size:20px; height:30px; width:400px; ">Latest Website Activity </div>
+
+<div class="news shadow">
+	<div style=" margin: 30px; width: 80% ; text-align:left ; padding-top: 18px; font-size:1em;">
+		Hosted By <span style="color:green;">Admin</span> on June 29th, 2018.
+		<p style=" margin: 15px; color: rgb(119,119,119) ; font-size: 1em ; font-style:italic ;"> Last Updated on June 28th, 2018.</p>
+		
+	</div>
+
+<h3>Headline</h3>
+<a href="" >Read More</a>
+</div>
+
+
+<div class="news shadow">
+	<div style=" margin: 30px; width: 80% ; text-align:left ; padding-top: 18px; font-size:1em;">
+		Hosted By <span style="color:green;">Association</span> on January 18th, 2018.
+		<p style=" margin: 15px; color: rgb(119,119,119) ; font-size: 1em ; font-style:italic ;"> Last Updated on June 28th, 2018.</p>
+		
+	</div>
+
+<h3>Headline</h3>
+<a href="">Read More</a>
+</div>
+
+<div class="news shadow">
+	<div style=" margin: 30px; width: 80% ; text-align:left ; padding-top: 18px; font-size:1em;">
+		Hosted By <span style="color:green;">Association</span> on January 18th, 2018.
+		<p style=" margin: 15px; color: rgb(119,119,119) ; font-size: 1em ; font-style:italic ;"> Last Updated on June 28th, 2018.</p>
+		
+	</div>
+
+<h3>Headline</h3>
+<a href="">Read More</a>
 </div>
 
   
