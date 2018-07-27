@@ -2,28 +2,26 @@
     
 	session_start();
 	require('connection.php');
-
  $position1 = "President"; 
- $position2 = "Secretary"; 
- $position3 = "Vice-president"; 
+ $position2 = "Secratery"; 
+ $position3 = "vice-president"; 
  $position4 = "Treasurer"; 
- $position5 = "Join-Secretary"; 
- $position6 = "Executive-members"; 
+ $position5 = "Joint-secretary"; 
+ $position6 = "Executive-member"; 
  
- $result1 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position1'")
+ $result1 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position1'")
  or die(" There are no records at the moment ... \n"); 
  
-  $result2 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position2'")
+  $result2 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position2'")
  or die(" There are no records at the moment ... \n");
-  $result3 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position3'")
+  $result3 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position3'")
  or die(" There are no records at the moment ... \n");
-  $result4 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position4'")
+  $result4 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position4'")
  or die(" There are no records at the moment ... \n");
-  $result5 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position5'")
+  $result5 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position5'")
  or die(" There are no records at the moment ... \n");
-  $result6 = mysqli_query($link ,"SELECT * FROM tbCandidates WHERE candidate_position='$position6'")
+  $result6 = mysqli_query($link ,"SELECT * FROM candidate WHERE c_position='$position6'")
  or die(" There are no records at the moment ... \n");
-
   
 ?>
 
@@ -161,8 +159,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result1))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote1' value='$row[candidate_name]'  oninput='this.className = '' '   /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='radio' name='vote1' value='$row[name]'   /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result1);
@@ -177,8 +175,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result2))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote2' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='radio' name='vote2' value='$row[name]'   /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result2);
@@ -192,8 +190,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result3))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote3' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='radio' name='vote3' value='$row[name]'  /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result3);
@@ -209,8 +207,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result4))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote4' value='$row[candidate_name]'  oninput='this.className = '' ' /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='radio' name='vote4' value='$row[name]'   /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result4);
@@ -225,8 +223,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result5))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='radio' name='vote5' value='$row[candidate_name]'  oninput='this.className = '' '  /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='radio' name='vote5' value='$row[name]'    /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result5);
@@ -242,8 +240,8 @@ button:hover {
 					while ($row=mysqli_fetch_array($result6))
 					{
 						echo "<tr>";
-						echo "<td>" . $row['candidate_name']."</td>";
-						echo "<td><input type='checkbox' name='vote6' value='$row[candidate_name]'  oninput='this.className = '' ' /></td>";
+						echo "<td>" . $row['name']."</td>";
+						echo "<td><input type='checkbox' name='check_list_sub[]' value='$row[name]'   /></td>";
 						echo "</tr>";
 					}
 					mysqli_free_result($result6);
@@ -310,6 +308,7 @@ function nextPrev(n) {
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
+
 function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
@@ -331,6 +330,7 @@ function validateForm() {
   }
   return valid; // return the valid status
 }
+
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
