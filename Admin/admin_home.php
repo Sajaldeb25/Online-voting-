@@ -1,4 +1,10 @@
 <?php
+	session_start();
+	require'connection.php';
+	
+	if(empty($_SESSION['admin_id'])){
+		header("location:index.php");
+	} 
 
 
 ?>
