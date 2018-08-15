@@ -3,8 +3,15 @@
 	session_start();
 	require'connection.php';
 	
-	$query = "SELECT * FROM tbmembers ";
+	if(empty($_SESSION['admin_id'])){
+		header("location:index.php");
+	}
+	
+	$query = "SELECT * FROM voter where rand_code ='0' ";
     $result = mysqli_query($link,$query);
+	
+	$query2 = "SELECT * FROM voter where rand_code !='0' ";
+    $result1 = mysqli_query($link,$query2);
 ?>
 
 
@@ -15,7 +22,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home page</title>
+    <title>Voter management</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -90,11 +97,21 @@
 				
 				<?php while($row = mysqli_fetch_array($result) ){ ?>
 					<tr>
-						<th scope="row"><?php echo'  '.$row['member_id'].' ' ?> </th>
-						<td><?php echo'  '.$row['first_name'].' ' ?> </td>
+						<th scope="row"><?php echo'  '.$row['v_id'].' ' ?> </th>
+						<td><?php echo'  '.$row['name'].' ' ?> </td>
 						<td><?php echo'  '.$row['email'].' ' ?> </td>
-						<td style="text-align:center;!important">   <a href="codesend.php?id=<?php echo' '.$row['member_id'].' '?>" class="teal-text"><i class="fa fa-pencil"></i></a>  </td>
-						<td style="text-align:center;!important">  <a href="voterdelete.php?id=<?php echo' '.$row['member_id'].' '?>" class="red-text"><i class="fa fa-times"></i></a>    </td>
+						<td style="text-align:center;!important">   <a href="mail_send.php?id=<?php echo' '.$row['v_id'].' '?>" class="teal-text"><i class="fa fa-pencil"></i></a>  </td>
+						<td style="text-align:center;!important">  <a href="voterdelete.php?id=<?php echo' '.$row['v_id'].' '?>" class="red-text"><i class="fa fa-times"></i></a>    </td>
+					</tr>
+				<?php } ?>
+				
+				<?php while($row1 = mysqli_fetch_array($result1) ){ ?>
+					<tr>
+						<th scope="row"><?php echo'  '.$row1['v_id'].' ' ?> </th>
+						<td><?php echo'  '.$row1['name'].' ' ?> </td>
+						<td><?php echo'  '.$row1['email'].' ' ?> </td>
+						<td style="text-align:center; font-color:green; !important">   <b>Sent</b>  </td>
+						<td style="text-align:center;!important">  <a href="voterdelete.php?id=<?php echo' '.$row1['v_id'].' '?>" class="red-text"><i class="fa fa-times"></i></a>    </td>
 					</tr>
 				<?php } ?>
 					
@@ -105,7 +122,20 @@
 			
 				<button class="btn btn-deep-purple" style="background-color:#17865e  !important "><i class="fa fa-pencil mr-1"></i>Send code to everyone</button>
 			<!--Table-->
-			</div>
+		</div>
+		<br>
+		
+		    <!-- Footer -->
+		<footer class="page-footer font-small black" style="background-color:#0b0c0c; !important">
+
+		  <!-- Copyright -->
+		  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+			<a href="">Teamtwenty5</a>
+		  </div>
+		  <!-- Copyright -->
+
+		</footer>
+		<!-- Footer -->
     
   </body>
 </html>
