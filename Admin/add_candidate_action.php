@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	require('connection.php');
+	
+	if(empty($_SESSION['admin_id'])){
+		header("location:index.php");
+	} 
 
 	
 	$name=$_POST['name'];
@@ -18,31 +22,30 @@
 	
 		// for image1
 		$file=$_FILES['image1']['tmp_name'];
-		$image= addslashes(file_get_contents($_FILES['image1']['tmp_name']));
-		$image_name= addslashes($_FILES['image1']['name']);
+		$image12= addslashes(file_get_contents($_FILES['image1']['tmp_name']));
+		$image_name12= addslashes($_FILES['image1']['name']);
 		move_uploaded_file($_FILES["image1"]["tmp_name"],"images/" . $_FILES["image1"]["name"]);
 		$location1="images/" . $_FILES["image1"]["name"];
 		
 		
 		// for image2;
 		$file=$_FILES['image2']['tmp_name'];
-		$image= addslashes(file_get_contents($_FILES['image2']['tmp_name']));
-		$image_name= addslashes($_FILES['image2']['name']);
+		$image23= addslashes(file_get_contents($_FILES['image2']['tmp_name']));
+		$image_name23= addslashes($_FILES['image2']['name']);
 		move_uploaded_file($_FILES["image2"]["tmp_name"],"images/" . $_FILES["image2"]["name"]);	
 		$location2="images/" . $_FILES["image2"]["name"];
 		
 		
 		// inserting sql
-		$sql = "INSERT INTO tbcandidates(candidate_name, candidate_position,pic,logo,email,phn,qualification) 
+		$sql = "INSERT INTO candidate(name, c_position,photo,logo,email,phone,qualification) 
 			VALUES ('$name','$position','$location1','$location2','$email','$phn','$qualification')";
 		
 		
 		$save=mysqli_query($link,$sql);
 		
-		if($save)
-			echo"saved";
-		else 
-			echo"not saved, problem occurred";
+		header("Location: manage-candidate.php");
+	
+		exit();
 
 
 ?>
