@@ -3,7 +3,11 @@
 	session_start();
 	require'connection.php';
 	
-	$query = "SELECT * FROM tbcandidates "; 
+	if(empty($_SESSION['admin_id'])){
+		header("location:index.php");
+	}
+	
+	$query = "SELECT * FROM candidate WHERE name != 'NULL' ORDER BY c_position"; 
     $result = mysqli_query($link,$query);
 ?>
 
@@ -94,16 +98,16 @@
 				<!-- DIV-1 -->
 				<div style=" float: left; width: 50%; padding: 25px;  height: 270px;">
 						<div class="avatar mx-auto white"  style="text-align:center;!important">
-							<img src="<?php echo'  '.$row['pic'].' ' ?> " class="rounded-circle" style="height:100px; !important" >' 
+							<img src="<?php echo' '.$row['photo'].' ' ?> " class="rounded-circle" style="height:100px; !important" >' 
 						</div>
 
 						<div class="card-body">
-							<h4 style="text-align:center; color:green;"><?php echo' '.$row['candidate_name'].' ' ?></h4>
+							<h4 style="text-align:center; color:green;"><?php echo' '.$row['name'].' ' ?></h4>
 							<hr>
-							 <p style="text-align:center;" > <?php echo' '.$row['email'].' ' ?>  </br> <?php echo' '.$row['phn'].' ' ?>  </p>
+							 <p style="text-align:center;" > <?php echo' '.$row['email'].' ' ?>  </br> <?php echo' '.$row['phone'].' ' ?> </br>Qualification: <?php echo' '.$row['qualification'].' ' ?>  </p>
 						</div>
-						<a href="delete_candidate.php?id=<?php echo' '.$row['candidate_id'].' '?>  ">Delete</a>
-						<a href="update_candidate.php?id=<?php echo' '.$row['candidate_id'].' '?> " style="padding-left:170px">Update</a>
+						<a href="delete_candidate.php?id=<?php echo' '.$row['c_id'].' '?>  ">Delete</a>
+						<a href="update_candidate.php?id=<?php echo' '.$row['c_id'].' '?> " style="padding-left:170px">Update</a>
 				</div>
 				<!-- DIV-2 -->
 				<div style=" float: left; width: 50%; padding: 25px;  height: 300px">
@@ -114,7 +118,7 @@
 						<div class="card-body">
 							<h5 style="text-align:center;">Logo</h5>
 							<hr>
-							 <p style="text-align:center;" >Candidates of:</br> <p style="text-align:center; color:#85C1E9;"> <?php echo' '.$row['candidate_position'].' ' ?></p> </p>
+							 <p style="text-align:center;" >Candidates of:</br> <p style="text-align:center; color:#85C1E9;"> <?php echo' '.$row['c_position'].' ' ?></p> </p>
 						</div>
 						
 				</div>
@@ -210,7 +214,19 @@
 				<!-- Card -->
 		</div>
 	</div>
-      
+         <!-- Footer -->
+		<div style="padding-top:9700px">
+			<footer class="page-footer font-small black" style="background-color:#0b0c0c; !important">
+
+			  <!-- Copyright -->
+			  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+				<a href="">Teamtwenty5</a>
+			  </div>
+			  <!-- Copyright -->
+
+			</footer>
+		</div>
+		<!-- Footer -->
     
   </body>
 </html>
